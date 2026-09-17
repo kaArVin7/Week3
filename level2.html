@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 2 — Kriptografi | PT. Tajir Mampus</title>
+    <link rel="stylesheet" href="challenge.css">
+</head>
+
+<body>
+    <main class="container">
+        <p>
+            <b>Progres CTF:</b>
+            <a href="level1.html">Level 1</a> |
+            <b>[Level 2: Kripto - Aktif]</b> |
+            <a href="level3.html">Level 3</a> |
+            <a href="level4.html">Level 4</a> |
+            <a href="level5.html">Level 5</a>
+        </p>
+        <hr>
+
+        <h1>PT. TAJIR MAMPUS CORPORATION INC.</h1>
+        <h3>Level 2 dari 5: Pencegatan Sandi Satelit (Cryptography)</h3>
+        <p>
+            Komunikasi antara Dewan Direksi dan Operasional berhasil dicegat. Transmisi ini diacak menggunakan algoritma rotasi klasik.
+        </p>
+
+        <fieldset>
+            <legend><b>Rekaman Transmisi Terenkripsi</b></legend>
+            <pre>[ALIRAN SAT-COM #402] FREK: 13.00 MHz
+PROTOKOL SANDI: Caesar / ROT-13 aktif
+PAYLOAD TERENKRIPSI: SYNT{y2_ebg13_pvcure_qrpbqrq}</pre>
+        </fieldset>
+
+        <fieldset>
+            <legend><b>Form Dekripsi Kunci</b></legend>
+            <form id="crypto-form" class="auth-form" onsubmit="return false;">
+                <p>Masukkan flag hasil dekripsi:</p>
+                <div class="input-group">
+                    <input type="text" id="flag-input" placeholder="FLAG{...}" size="36" autocomplete="off" spellcheck="false" required>
+                    <button type="submit" id="submit-btn">Dekripsi</button>
+                </div>
+                <p id="feedback-msg" class="feedback-msg" aria-live="polite"></p>
+            </form>
+        </fieldset>
+
+        <fieldset id="solved-card" class="archive-card hidden">
+            <legend><b>Status: Dekripsi Berhasil!</b></legend>
+            <h3>Log Satelit Berhasil Dipecahkan</h3>
+            <p>
+                Transmisi ini mengungkap bahwa arsip server lama tidak pernah diperbarui dan tetap tanpa gaya tampilan (unstyled) pada host internal kuno.
+            </p>
+            <p>
+                <b>Flag Level 2:</b> <code>FLAG{l2_rot13_cipher_decoded}</code>
+            </p>
+            <p>
+                <a href="level3.html"><b>&rarr; Lanjut ke Level 3: Forensik Web (Tanpa CSS)</b></a>
+            </p>
+        </fieldset>
+
+        <hr>
+        <details>
+            <summary><b>Butuh petunjuk?</b></summary>
+            <p>
+                Transmisi mencantumkan 'FREK: 13.00 MHz' dan 'ROT-13'. Setiap huruf alfabet pada ciphertext digeser sejauh 13 posisi (contoh: S &rarr; F, Y &rarr; L). Anda dapat men-decode-nya di konsol DevTools atau menggunakan alat decoder Caesar cipher.
+            </p>
+        </details>
+    </main>
+
+    <script src="level2.js"></script>
+    <script src="bgm.js"></script>
+</body>
+
+</html>

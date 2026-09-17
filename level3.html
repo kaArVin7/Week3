@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 3 — Forensik Web (Arsip Kuno Tanpa CSS) | PT. Tajir Mampus</title>
+    <link rel="stylesheet" href="challenge.css">
+</head>
+
+<body>
+    <!-- nih bos: RkxBR3tsM19yYXdfaHRtbF9mb3JlbnNpY3Nfc3VjY2Vzc30= -->
+
+    <main class="container">
+        <p>
+            <b>Progres CTF:</b>
+            <a href="level1.html">Level 1</a> |
+            <a href="level2.html">Level 2</a> |
+            <b>[Level 3: Forensik - Aktif]</b> |
+            <a href="level4.html">Level 4</a> |
+            <a href="level5.html">Level 5</a>
+        </p>
+        <hr>
+
+        <h1>PT. TAJIR MAMPUS CORPORATION INC.</h1>
+        <h3>Level 3 dari 5: Host Internal SRV-1995-DEC // Pemulihan Basis Data Mentah (Forensics)</h3>
+        <p>
+            <i>Pemberitahuan Sistem: Berjalan dalam mode HTML mentah lawas. Tidak ada stylesheet atau mesin tata letak
+                dekoratif yang dimuat. Dipulihkan dari unit cadangan pita magnetik #04.</i>
+        </p>
+
+        <hr>
+
+        <h2>Catatan Rahasia Personel & Aset (1995-1998)</h2>
+        <p>Dump arsip berikut memuat fragmen catatan awal perusahaan. Seorang analis menyisipkan token izin darurat di
+            dalam catatan sebelum server dinonaktifkan.</p>
+
+        <table border="1" cellpadding="6" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>ID Catatan</th>
+                    <th>Nama Subjek</th>
+                    <th>Departemen</th>
+                    <th>Catatan Izin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>REC-001</td>
+                    <td>Tony Stark</td>
+                    <td>Lab Propulsi Lanjutan</td>
+                    <td>Prototipe telemetri Proyek Arc disetujui.</td>
+                </tr>
+                <tr>
+                    <td>REC-002</td>
+                    <td>John Thor</td>
+                    <td>Induksi Tegangan Tinggi</td>
+                    <td>Uji generator induksi jaringan dijadwalkan untuk Q4.</td>
+                </tr>
+                <tr>
+                    <td>REC-003</td>
+                    <td>Bruce Banner</td>
+                    <td>Riset Radiasi</td>
+                    <td>Protokol penahanan laboratorium ditingkatkan.</td>
+                </tr>
+                <tr>
+                    <td>REC-004</td>
+                    <td>Daemon Arsip Internal</td>
+                    <td>Layanan Infrastruktur</td>
+                    <td data-token="RkxBR3tsM19yYXdfaHRtbF9mb3JlbnNpY3Nfc3VjY2Vzc30=">
+                        Muatan artefak cadangan: <code>RkxBR3tsM19yYXdfaHRtbF9mb3JlbnNpY3Nfc3VjY2Vzc30=</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <fieldset>
+            <legend><b>Verifikasi Izin Level 3</b></legend>
+            <form id="forensics-form" onsubmit="return false;">
+                <p>Masukkan flag hasil dekripsi forensik yang ditemukan pada tabel atau komentar:</p>
+                <div class="input-group">
+                    <input type="text" id="flag-input" placeholder="FLAG{...}" size="36" autocomplete="off"
+                        spellcheck="false" required>
+                    <input type="submit" id="submit-btn" value="Verifikasi Flag Forensik">
+                </div>
+                <p id="feedback-msg" style="font-weight: bold;"></p>
+            </form>
+        </fieldset>
+
+        <fieldset id="solved-box" class="archive-card hidden">
+            <legend><b>Status: Level 3 Selesai!</b></legend>
+            <h3>Artefak Forensik Terverifikasi</h3>
+            <p>
+                <b>Flag Level 3:</b> <code>FLAG{l3_raw_html_forensics_success}</code>
+            </p>
+            <p>
+                <a href="level4.html"><b>&rarr; Lanjut ke Level 4: Rekayasa Balik (Reverse Engineering)</b></a>
+            </p>
+        </fieldset>
+
+        <hr>
+        <details>
+            <summary><b>Butuh petunjuk?</b></summary>
+            <p>
+                Periksa kode sumber HTML halaman (F12 Elements atau View Source). Perhatikan baris tabel REC-004 dan
+                komentar HTML di bagian atas halaman. Karakter berakhiran <code>=</code> menandakan encoding Base64
+                standar. Anda dapat men-decode-nya di konsol browser menggunakan <code>atob("...")</code>.
+            </p>
+        </details>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('forensics-form');
+            var input = document.getElementById('flag-input');
+            var submitBtn = document.getElementById('submit-btn');
+            var feedbackMsg = document.getElementById('feedback-msg');
+            var solvedBox = document.getElementById('solved-box');
+
+            var TARGET_FLAG = 'FLAG{l3_raw_html_forensics_success}';
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var val = input.value.trim();
+                feedbackMsg.textContent = '';
+
+                if (!val) {
+                    feedbackMsg.textContent = 'Silakan masukkan flag.';
+                    return;
+                }
+
+                if (val === TARGET_FLAG) {
+                    feedbackMsg.textContent = 'Akses Diizinkan: Forensik basis data lawas terkonfirmasi.';
+                    solvedBox.classList.remove('hidden');
+                    input.disabled = true;
+                    submitBtn.disabled = true;
+
+                    var current = parseInt(localStorage.getItem('ctf_level_unlocked') || '1', 10);
+                    if (current <= 3) {
+                        localStorage.setItem('ctf_level_unlocked', '4');
+                    }
+                } else {
+                    feedbackMsg.textContent = 'Flag forensik tidak valid. Periksa string Base64 hasil dekripsi.';
+                }
+            });
+        });
+    </script>
+    <script src="bgm.js"></script>
+</body>
+
+</html>

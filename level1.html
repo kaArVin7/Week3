@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 1 — Eksploitasi Web | PT. Tajir Mampus</title>
+    <link rel="stylesheet" href="challenge.css">
+</head>
+
+<body>
+    <!-- Ini emergency keynyA: 'FLAG{l1_client_side_bypass_pwned}' (role='admin') -->
+
+    <main class="container">
+        <p>
+            <b>Progres CTF:</b>
+            <b>[Level 1: Web Explo - Aktif]</b> |
+            <a href="level2.html">Level 2</a> |
+            <a href="level3.html">Level 3</a> |
+            <a href="level4.html">Level 4</a> |
+            <a href="level5.html">Level 5</a>
+        </p>
+        <hr>
+
+        <h1>PT. TAJIR MAMPUS CORPORATION INC.</h1>
+        <h3>Level 1 dari 5: Gerbang 1 — Penguncian Sisi Klien (Web Exploitation)</h3>
+        <p>
+            Gerbang keamanan perimeter memerlukan otorisasi teknisi. Pengunjung luar dibatasi menggunakan kontrol
+            sisi klien (client-side). Periksa struktur DOM halaman (F12) untuk melewati batasan keamanan ini.
+        </p>
+
+        <fieldset>
+            <legend><b>Panel Bypass Keamanan Perimeter</b></legend>
+            <form id="bypass-form" class="auth-form" onsubmit="return false;">
+                <input type="hidden" id="auth-role" name="role" value="guest">
+
+                <p>Masukkan kunci darurat teknisi:</p>
+                <div class="input-group">
+                    <input type="text" id="override-key" placeholder="Kunci darurat..." maxlength="4"
+                        autocomplete="off" spellcheck="false" required>
+                    <button type="submit" id="submit-btn" disabled>Bypass Keamanan</button>
+                </div>
+                <p id="feedback-msg" class="feedback-msg" aria-live="polite"></p>
+            </form>
+        </fieldset>
+
+        <fieldset id="solved-card" class="archive-card hidden">
+            <legend><b>Status: Gerbang 1 Berhasil Ditembus!</b></legend>
+            <h3>Keamanan Perimeter Terbuka</h3>
+            <p>
+                Autentikasi teknisi diterima. Log komunikasi satelit internal telah terbuka untuk dianalisis.
+            </p>
+            <p>
+                <b>Flag Level 1:</b> <code>FLAG{l1_client_side_bypass_pwned}</code>
+            </p>
+            <p>
+                <a href="level2.html"><b>&rarr; Lanjut ke Level 2: Kriptografi</b></a>
+            </p>
+        </fieldset>
+
+        <hr>
+        <details>
+            <summary><b>Butuh petunjuk?</b></summary>
+            <p>
+                Tekan F12 untuk memeriksa hierarki Elements. Lihat komentar HTML di atas &lt;main&gt;, hapus atribut
+                <code>disabled</code> pada tombol, ubah batasan <code>maxlength</code> pada input, dan ubah input
+                tersembunyi <code>role</code> dari 'guest' menjadi 'admin'.
+            </p>
+        </details>
+    </main>
+
+    <script src="level1.js"></script>
+    <script src="bgm.js"></script>
+</body>
+
+</html>

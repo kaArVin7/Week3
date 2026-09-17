@@ -1,0 +1,280 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#bungkus,
+#top,
+#banner2,
+#gambarteks,
+#kepalalego,
+#testimoni,
+#subscribe,
+#footer {
+    width: 1000px;
+    margin: 20px auto 0;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo img {
+    width: 80px;
+    display: block;
+}
+
+#navbar ul,
+#menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+#navbar ul li,
+#menu ul li {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#navbar ul li a,
+#menu ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #1a73e8;
+    padding: 10px 0;
+    display: inline-block;
+}
+
+#navbar ul li a:hover,
+#navbar ul li a.active,
+#menu ul li a:hover,
+#menu ul li a.active {
+    border-bottom: 4px solid #1a73e8;
+}
+
+#banner img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+#gambarbanner2,
+#highlight {
+    display: flex;
+    justify-content: space-between;
+}
+
+#gambarbanner2 img,
+#highlight .box,
+#highlight img {
+    width: 320px;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+}
+
+#gambarteks {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#gambarkiri img {
+    width: 380px;
+    border-radius: 10px;
+    display: block;
+}
+
+#tekskanan h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 0 16px 0;
+    color: #000;
+}
+
+#tekskanan p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+}
+
+#kepalalego {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#kepalalegoteksnya {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 25px 0;
+    color: #000;
+}
+
+#gambarlego {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#gambarlego img {
+    width: 95px;
+    display: block;
+}
+
+#testimoni {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#testimoniteks {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 25px 0;
+    color: #000;
+}
+
+#testimoni1,
+#testimoni2 {
+    width: 485px;
+    box-sizing: border-box;
+    background-color: #808080;
+    border-radius: 12px;
+    padding: 35px 25px;
+    text-align: center;
+}
+
+#testimoni1 img,
+#testimoni2 img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
+    background-color: #ffffff;
+}
+
+#tekstestimoni1 h1,
+#tekstestimoni2 h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 12px 0;
+    color: #000;
+}
+
+#tekstestimoni1 p,
+#tekstestimoni2 p {
+    font-size: 14px;
+    line-height: 1.45;
+    color: #000;
+    margin: 0;
+}
+
+#subscribe {
+    margin-top: 40px;
+    background-color: deeppink;
+    padding: 35px 20px 40px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#subscribe h1 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0 0 20px 0;
+}
+
+#subscribe form input[type="email"],
+#subscribe input[type="email"] {
+    width: 420px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 14px;
+    display: block;
+    margin: 0 auto 15px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#subscribe #button,
+#subscribe button {
+    background-color: #ff69b4;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 6px;
+    padding: 8px 30px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    padding-bottom: 40px;
+}
+
+#footer {
+    margin-top: 30px;
+    background-color: #333333;
+    padding: 40px 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footerkiri h3 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 12px 0;
+}
+
+#footerkiri p {
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+#footerkanan {
+    text-align: right;
+}
+
+#iconfooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+#iconfooter img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: block;
+}
+
+#footerkanan p {
+    color: #ffffff;
+    font-size: 12px;
+    margin: 0;
+}

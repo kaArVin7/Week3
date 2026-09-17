@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 5 — Eskalasi Hak Akses | PT. Tajir Mampus</title>
+    <link rel="stylesheet" href="challenge.css">
+</head>
+
+<body>
+    <main class="container">
+        <p>
+            <b>Progres CTF:</b>
+            <a href="level1.html">Level 1</a> |
+            <a href="level2.html">Level 2</a> |
+            <a href="level3.html">Level 3</a> |
+            <a href="level4.html">Level 4</a> |
+            <b>[Level 5: Privilege - Aktif]</b>
+        </p>
+        <hr>
+
+        <h1>PT. TAJIR MAMPUS CORPORATION INC.</h1>
+        <h3>Level 5 dari 5: Otorisasi Brankas Eksekutif (Privilege Escalation)</h3>
+        <p>
+            Brankas utama yang memuat berkas rahasia Tony Stark dan John Thor terkunci di balik verifikasi hak akses
+            eksekutif. Sesi browser aktif Anda saat ini masih dibatasi.
+        </p>
+
+        <p>
+            <b>STATUS SESI:</b> <span id="session-badge">[SESI: GUEST // INTERN]</span>
+        </p>
+
+        <fieldset>
+            <legend><b>Pemeriksaan Kredensial Sesi Browser</b></legend>
+            <pre>[PEMERIKSAAN SESI] HOST: PT. Tajir Mampus Core
+<span id="tier-display">sessionStorage('access_tier'): "guest"</span>
+<span id="cookie-display">session/cookie('role'): "intern"</span>
+Syarat Akses: tier='root_executive' & role='superadmin'</pre>
+
+            <p>
+                <button type="button" id="eval-btn">Autentikasi Hak Akses Eksekutif</button>
+            </p>
+            <p id="feedback-msg" class="feedback-msg" aria-live="polite"></p>
+        </fieldset>
+
+        <fieldset id="victory-vault" class="archive-card hidden">
+            <legend><b>Status: Izin Tingkat 5 Diperoleh (Godmode)</b></legend>
+            <h2>Berkas Rahasia: Proyek Q4 Disetujui Penuh</h2>
+            <p>
+                Otorisasi root penuh terbentuk. Prototipe Tony Stark (telemetri kostum Iron Man) dan John Thor (induksi
+                jaringan listrik) terkonfirmasi untuk tahap produksi. Seluruh aset perusahaan berada di bawah kendali
+                Anda.
+            </p>
+            <p>
+                <b>Master Flag Final:</b> <code>FLAG{l5_tajir_mampus_root_godmode_unlocked}</code>
+            </p>
+            <hr>
+            <h3>🏆 Selamat! Anda telah berhasil menyelesaikan seluruh 5 Level CTF!</h3>
+            <div class="btn-group">
+                <a href="index.html"><b>&larr; Kembali ke Beranda Lab Week 3</b></a>
+                <span>|</span>
+                <button type="button" id="reset-btn">Reset Progres CTF</button>
+            </div>
+            <hr>
+            <div class="container">
+                <h1>Disclaimer! ini dibuat bareng AI. Pembagiannya kayak 99% AI 1% jovin asoyy</h1>
+            </div>
+        </fieldset>
+
+        <hr>
+        <details>
+            <summary><b>Butuh petunjuk?</b></summary>
+            <p>
+                Buka DevTools (F12). Di tab <b>Application</b> atau melalui Console, naikkan izin akses Anda dengan
+                menjalankan:<br>
+                <code>sessionStorage.setItem('access_tier', 'root_executive');</code><br>
+                <code>document.cookie = "role=superadmin"; sessionStorage.setItem('role', 'superadmin');</code><br>
+                Kemudian klik 'Autentikasi Hak Akses Eksekutif'.
+            </p>
+        </details>
+    </main>
+
+    <script src="level5.js"></script>
+    <script src="bgm.js"></script>
+</body>
+
+</html>

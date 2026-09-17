@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    padding: 24px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container,
+.card,
+main {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.level-stepper {
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.auth-form {
+    margin: 16px 0;
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.btn-group {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.terminal-box,
+pre {
+    margin: 14px 0;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+.archive-card,
+fieldset {
+    margin: 16px 0;
+    padding: 14px;
+}
+
+.flag-box {
+    margin: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer,
+.footer {
+    margin-top: 24px;
+    padding-top: 14px;
+}
+
+.hint-content,
+details {
+    margin-top: 10px;
+}
+
+.feedback-msg {
+    margin-top: 8px;
+    min-height: 18px;
+}
+
+.hidden {
+    display: none !important;
+}

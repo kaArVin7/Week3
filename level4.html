@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 4 — Rekayasa Balik | PT. Tajir Mampus</title>
+    <link rel="stylesheet" href="challenge.css">
+</head>
+
+<body>
+    <main class="container">
+        <p>
+            <b>Progres CTF:</b>
+            <a href="level1.html">Level 1</a> |
+            <a href="level2.html">Level 2</a> |
+            <a href="level3.html">Level 3</a> |
+            <b>[Level 4: Reversing - Aktif]</b> |
+            <a href="level5.html">Level 5</a>
+        </p>
+        <hr>
+
+        <h1>PT. TAJIR MAMPUS CORPORATION INC.</h1>
+        <h3>Level 4 dari 5: Checksum Gerbang Logika (Reverse Engineering)</h3>
+        <p>
+            Gerbang Keamanan 4 dijaga oleh validator algoritma sisi klien di file <code>level4.js</code>. Periksa
+            logika skrip di DevTools Sources dan balikkan algoritmanya untuk menemukan 6 karakter kunci akses.
+        </p>
+
+        <fieldset>
+            <legend><b>Status Gerbang Logika</b></legend>
+            <pre>[GERBANG LOGIKA #04] STATUS: TANTANGAN AKTIF
+VALIDATOR: Larik Transformasi Karakter
+TARGET URUTAN: [91, 75, 87, 89, 101, 55]</pre>
+        </fieldset>
+
+        <fieldset>
+            <legend><b>Panel Verifikasi Kunci</b></legend>
+            <form id="reverse-form" class="auth-form" onsubmit="return false;">
+                <p>Masukkan 6 karakter kunci yang memenuhi persamaan algoritma:</p>
+                <div class="input-group">
+                    <input type="text" id="pin-input" placeholder="Kunci 6 karakter..." maxlength="6" autocomplete="off" spellcheck="false" required>
+                    <button type="submit" id="submit-btn">Verifikasi Kunci</button>
+                </div>
+                <p id="feedback-msg" class="feedback-msg" aria-live="polite"></p>
+            </form>
+        </fieldset>
+
+        <fieldset id="solved-card" class="archive-card hidden">
+            <legend><b>Status: Gerbang 4 Terbuka!</b></legend>
+            <h3>Algoritma Berhasil Dipecahkan</h3>
+            <p>
+                Algoritma berhasil direkayasa balik. Akses ke Izin Sistem Eksekutif (Level 5) kini telah terbuka.
+            </p>
+            <p>
+                <b>Flag Level 4:</b> <code>FLAG{l4_reverse_logic_cracked}</code>
+            </p>
+            <p>
+                <a href="level5.html"><b>&rarr; Lanjut ke Level 5: Otorisasi Final (Final Boss)</b></a>
+            </p>
+        </fieldset>
+
+        <hr>
+        <details>
+            <summary><b>Butuh petunjuk?</b></summary>
+            <p>
+                Buka DevTools (F12) > Sources > <code>level4.js</code>. Periksa fungsi <code>verifyGateKey(key)</code>. Fungsi tersebut menghitung <code>char.charCodeAt(0) + (index * 3) + 7</code> dan membandingkannya dengan <code>[91, 75, 87, 89, 101, 55]</code>. Balikkan rumusnya di Console: <code>[91, 75, 87, 89, 101, 55].map((val, i) => String.fromCharCode(val - (i * 3) - 7)).join('')</code>.
+            </p>
+        </details>
+    </main>
+
+    <script src="level4.js"></script>
+    <script src="bgm.js"></script>
+</body>
+
+</html>

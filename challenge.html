@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403 Akses Dilarang — PT. Tajir Mampus</title>
+    <link rel="stylesheet" href="challenge.css">
+</head>
+
+<body>
+    <!--Flag 1: 'FLAG{tajir_mampus_' -->
+    <!-- cek #vault-token di DOM buat flag 2-->
+
+    <main class="container">
+        <p>
+            <b>Navigasi CTF:</b>
+            <b>[Tantangan Utama]</b> |
+            <a href="level1.html">Level 1</a> |
+            <a href="level2.html">Level 2</a> |
+            <a href="level3.html">Level 3</a> |
+            <a href="level4.html">Level 4</a> |
+            <a href="level5.html">Level 5</a>
+        </p>
+        <hr>
+
+        <h1>PT. TAJIR MAMPUS CORPORATION INC.</h1>
+        <h3>Status: 403 Akses Dilarang</h3>
+        <p>
+            Titik akhir ini memerlukan otorisasi internal dari PT. Tajir Mampus Corporation Inc. Masukkan flag akses
+            untuk memverifikasi kredensial.
+        </p>
+
+        <div id="vault-token" data-secret="secret_corp_" style="display: none;" aria-hidden="true"></div>
+
+        <fieldset>
+            <legend><b>Verifikasi Kredensial Akses</b></legend>
+            <form id="flag-form" class="auth-form" onsubmit="return false;">
+                <p>Masukkan flag hasil rekonstruksi:</p>
+                <div class="input-group">
+                    <input type="text" id="flag-input" placeholder="FLAG{...}" size="36" autocomplete="off"
+                        spellcheck="false" required>
+                    <button type="submit" id="submit-btn">Verifikasi</button>
+                </div>
+                <p id="feedback-msg" class="feedback-msg" aria-live="polite"></p>
+            </form>
+        </fieldset>
+
+        <fieldset id="classified-archive" class="archive-card hidden">
+            <legend><b>Status: Akses Terbuka</b></legend>
+            <h2>Berkas Rahasia: Proyek Q4</h2>
+            <p>
+                Prototipe untuk Tony Stark (telemetri kostum) dan John Thor (induksi jaringan listrik) telah disetujui
+                untuk tahap deployment. Seluruh aset diamankan di Dark Science Boulevard.
+            </p>
+            <p>
+                <b>Flag Terpecahkan:</b> <code class="flag-code"></code>
+            </p>
+            <div class="btn-group">
+                <a href="level1.html"><b>&rarr; Lanjut ke Tantangan 5 Level</b></a>
+            </div>
+        </fieldset>
+
+        <hr>
+        <details>
+            <summary><b>Butuh petunjuk?</b></summary>
+            <p>Periksa kode sumber halaman (F12). Cek komentar HTML, periksa atribut DOM pada elemen tersembunyi, dan
+                tinjau konsol browser.</p>
+        </details>
+    </main>
+
+    <script src="challenge.js"></script>
+    <script src="bgm.js"></script>
+</body>
+
+</html>
