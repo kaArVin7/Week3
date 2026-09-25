@@ -1,280 +1,83 @@
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#bungkus,
-#top,
-#banner2,
-#gambarteks,
-#kepalalego,
-#testimoni,
-#subscribe,
-#footer {
-    width: 1000px;
-    margin: 20px auto 0;
-}
-
-#header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+@media (min-width: 1200px) {
+    .container {
+        max-width: 970px;
+    }
 }
 
 #logo img {
+    display: block;
     width: 80px;
+    height: auto;
+}
+
+.hero-image {
     display: block;
-}
-
-#navbar ul,
-#menu ul {
-    margin: 0;
-    padding: 0;
-}
-
-#navbar ul li,
-#menu ul li {
-    list-style: none;
-    padding: 0;
-    display: inline-block;
-    margin-left: 20px;
-}
-
-#navbar ul li a,
-#menu ul li a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #1a73e8;
-    padding: 10px 0;
-    display: inline-block;
-}
-
-#navbar ul li a:hover,
-#navbar ul li a.active,
-#menu ul li a:hover,
-#menu ul li a.active {
-    border-bottom: 4px solid #1a73e8;
-}
-
-#banner img {
     width: 100%;
-    border-radius: 10px;
+}
+
+.highlight-image {
     display: block;
-}
-
-#gambarbanner2,
-#highlight {
-    display: flex;
-    justify-content: space-between;
-}
-
-#gambarbanner2 img,
-#highlight .box,
-#highlight img {
-    width: 320px;
+    width: 100%;
     height: 180px;
-    border-radius: 10px;
     object-fit: cover;
+}
+
+.client-image {
     display: block;
+    width: 82px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
 }
 
-#gambarteks {
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-#gambarkiri img {
-    width: 380px;
-    border-radius: 10px;
-    display: block;
-}
-
-#tekskanan h1 {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0 0 16px 0;
-    color: #000;
-}
-
-#tekskanan p {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #333;
-    margin: 0;
-}
-
-#kepalalego {
-    margin-top: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-#kepalalegoteksnya {
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 0 0 25px 0;
-    color: #000;
-}
-
-#gambarlego {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-#gambarlego img {
-    width: 95px;
-    display: block;
-}
-
-#testimoni {
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-#testimoniteks {
-    width: 100%;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 0 0 25px 0;
-    color: #000;
-}
-
-#testimoni1,
-#testimoni2 {
-    width: 485px;
-    box-sizing: border-box;
-    background-color: #808080;
+.testimonial-card {
+    border: 0;
     border-radius: 12px;
-    padding: 35px 25px;
-    text-align: center;
+    background-color: #808080;
 }
 
-#testimoni1 img,
-#testimoni2 img {
+.testimonial-image {
+    display: block;
     width: 85px;
     height: 85px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 3px solid #fff;
     border-radius: 50%;
-    border: 3px solid #ffffff;
+    background-color: #fff;
     object-fit: cover;
-    display: block;
-    margin: 0 auto 15px;
-    background-color: #ffffff;
 }
 
-#tekstestimoni1 h1,
-#tekstestimoni2 h1 {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0 0 12px 0;
-    color: #000;
-}
-
-#tekstestimoni1 p,
-#tekstestimoni2 p {
-    font-size: 14px;
-    line-height: 1.45;
-    color: #000;
-    margin: 0;
-}
-
-#subscribe {
-    margin-top: 40px;
+.subscribe-panel {
+    padding: 36px 20px 40px;
     background-color: deeppink;
-    padding: 35px 20px 40px;
-    text-align: center;
-    box-sizing: border-box;
+    color: #fff;
 }
 
-#subscribe h1 {
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: normal;
-    margin: 0 0 20px 0;
+.site-footer {
+    background-color: #212529;
+    color: #fff;
 }
 
-#subscribe form input[type="email"],
-#subscribe input[type="email"] {
-    width: 420px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 2px;
-    text-align: center;
-    font-size: 14px;
+.social-links a,
+.social-links img {
     display: block;
-    margin: 0 auto 15px;
-    box-sizing: border-box;
-    outline: none;
-}
-
-#subscribe #button,
-#subscribe button {
-    background-color: #ff69b4;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    border-radius: 6px;
-    padding: 8px 30px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-footer {
-    padding-bottom: 40px;
-}
-
-#footer {
-    margin-top: 30px;
-    background-color: #333333;
-    padding: 40px 50px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#footerkiri h3 {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0 0 12px 0;
-}
-
-#footerkiri p {
-    color: #ffffff;
-    font-size: 13px;
-    line-height: 1.5;
-    margin: 0;
-}
-
-#footerkanan {
-    text-align: right;
-}
-
-#iconfooter {
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-#iconfooter img {
     width: 28px;
     height: 28px;
-    border-radius: 50%;
-    display: block;
 }
 
-#footerkanan p {
-    color: #ffffff;
-    font-size: 12px;
-    margin: 0;
+@media (max-width: 767.98px) {
+    .highlight-image {
+        height: auto;
+        max-height: 240px;
+    }
+
+    .site-footer,
+    .site-footer .text-md-end {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
 }
